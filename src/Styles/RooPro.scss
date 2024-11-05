@@ -1,0 +1,217 @@
+@use "sass:map";
+@use "./RooBg.scss";
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+  max-width: 1200px;
+  width: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin: auto;
+}
+.InputHeader {
+  padding-left: 20px;
+  padding-top: 15px;
+}
+.Content {
+  ul {
+    display: flex;
+
+    list-style-type: none;
+
+    color: white;
+    cursor: pointer;
+    font-weight: 600;
+    li {
+      position: relative;
+      padding-right: 11px;
+      &::after {
+        position: absolute;
+        width: 1px;
+        top: 18px;
+        bottom: 31px;
+        right: 4px;
+        content: "";
+        background: rgb(204, 179, 179);
+        opacity: 0.5;
+      }
+    }
+  }
+}
+.Headerx {
+  cursor: pointer;
+}
+.carousel-control-prev,
+.carousel-control-next {
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.carousel:hover .carousel-control-prev,
+.carousel:hover .carousel-control-next {
+  opacity: 1;
+}
+.menu_category {
+  font-size: 13px;
+  position: relative;
+  background: "none";
+}
+
+.absolute {
+  position: absolute;
+  width: 700px;
+  height: 400px;
+  background-color: #eaecf0;
+  z-index: 2;
+  display: none;
+  top: 0;
+  left: 184px;
+  border-radius: 10px;
+  margin-left: 20px;
+  padding: 5px 20px;
+}
+.Text {
+  font-size: 14px;
+  padding: 10px;
+  line-height: 1.3em;
+  width: 300px;
+}
+
+.Item {
+  border: 5px solid #a22723;
+  background-color: #a22723;
+  border-radius: 10px;
+  margin-bottom: 50px;
+  .Texts {
+    color: #fd9e26;
+  }
+  .Card {
+    display: flex;
+    cursor: pointer;
+  }
+
+  .CardItem {
+    border: 5px solid white;
+    background-color: white;
+    border-radius: 10px;
+    margin: 5px;
+    width: 300px;
+    display: block;
+    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .CardItem:hover {
+    color: red;
+    transform: translateY(-5px) scale(1.03);
+  }
+}
+
+.Footer {
+  display: inline-block;
+  width: 300px;
+}
+.Footer:hover {
+  color: red;
+  cursor: pointer;
+}
+.Head {
+  background: linear-gradient(270deg, #434343, #000);
+  border-radius: 12px;
+  height: 32px;
+  font-size: 16px;
+  font-weight: 700;
+  justify-content: center;
+  margin: 10px 10px;
+  max-width: 244px;
+  padding: 05px 15px;
+  text-transform: uppercase;
+  cursor: pointer;
+  color: #fff;
+}
+.OrderProcess {
+  width: 224px;
+  height: 278px;
+  border-radius: 12px;
+  box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.102),
+    0 2px 6px 2px rgba(60, 64, 67, 0.149);
+  background: #fff;
+  display: inline-block;
+  margin: 10px;
+
+  .title {
+    height: 30px;
+    font-family: Arial;
+    font-style: normal;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.4;
+    max-height: 55px;
+    padding: 0 0 5px;
+  }
+  .Button {
+    width: 200px;
+    height: 40px;
+    border-radius: 10px solid white;
+    padding: 10px 0px;
+    background-color: #f1f8fe;
+    color: #2a83e9;
+    font-size: 12px;
+    font-weight: 700;
+    text-align: center;
+    margin: auto;
+    box-sizing: border-box;
+    cursor: pointer;
+  }
+}
+
+.Order {
+  .OrderItem {
+    font-size: 20px;
+    color: #333;
+
+    font-weight: bold;
+    line-height: 20px;
+  }
+  .OrderItem h2 {
+    color: #e10c00;
+    margin-right: 10px;
+    font-size: 24px;
+  }
+}
+
+.OrderInput {
+  border: 1px solid #ddd;
+  background-color: #fff;
+  padding: 6px 12px;
+  color: #333;
+  width: 70px;
+}
+:where(.css-dev-only-do-not-override-ni1kz0).ant-layout {
+  background: none;
+}
+
+.Title {
+  font-size: 30px;
+  padding-bottom: 20px;
+}
+
+.Form .flow_wrapper {
+  font: 14px / 18px Helvetica Neue, Helvetica, Arial, SF Pro Display, sans-serif;
+  background-color: #f0f0f0;
+  width: 700px;
+  line-height: 40px;
+
+  .Submit {
+    background-color: #fd6e1d;
+    margin: 20px 200px;
+  }
+}
+
+//
+.input-error {
+  background: rgb(236, 177, 177);
+}
