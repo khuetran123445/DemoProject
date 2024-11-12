@@ -86,9 +86,16 @@
   border: 5px solid #a22723;
   background-color: #a22723;
   border-radius: 10px;
-  margin-bottom: 50px;
+
   .Texts {
     color: #fd9e26;
+  }
+  @media (min-width: 1200px) {
+    .h2,
+    h2 {
+      font-size: 1rem;
+      margin: 20px 0px;
+    }
   }
   .Card {
     display: flex;
@@ -111,8 +118,9 @@
 }
 
 .Footer {
-  display: inline-block;
-  width: 300px;
+  width: 400px;
+  display: inline-flex;
+  padding: 10px;
 }
 .Footer:hover {
   color: red;
@@ -184,13 +192,11 @@
 }
 
 .OrderInput {
-  border: 1px solid #ddd;
-  background-color: #fff;
   padding: 6px 12px;
   color: #333;
   width: 70px;
 }
-:where(.css-dev-only-do-not-override-ni1kz0).ant-layout {
+:where(.css-dev-only-do-not-override-apn68).ant-layout {
   background: none;
 }
 

@@ -80,23 +80,21 @@ const OrderNow = () => {
   }
 
   return (
-    <div className="flex justify-center Order h-[580px] p-3 gap-4">
+    <div className="flex justify-center Order h-[500px] gap-3   rounded-[10px] w-[1140px]">
       <div className="  Orderimg ">
         <img
           src={product.images}
           alt={product.title}
           style={{
+            border: "2px solid black ",
             width: "400px",
-            height: "400px",
-            border: "1px solid ",
-            background: "rgb(242, 244, 247)",
           }}
         />
       </div>
       <div className="     OrderItem   ">
         <div>
-          <h1 className="py-3">{product.title}</h1>
-          <h2 className="py-3 ">
+          <h1>{product.title}</h1>
+          <h2>
             <Formatter number={product.price} />
           </h2>
           <div>
@@ -129,7 +127,7 @@ const OrderNow = () => {
             />
             256G
           </div>
-          <h3 className="py-3 ">
+          <h3>
             Số lượng:
             <input
               className="OrderInput"

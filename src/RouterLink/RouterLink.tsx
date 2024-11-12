@@ -16,4 +16,7 @@ export const ROUTERS = {
   LinkShopping: {
     ShoppingCart: "/ShoppingCart/:id",
   },
+  LinkComplet: {
+    Complete: "/Complete/:Order",
+  },
 };

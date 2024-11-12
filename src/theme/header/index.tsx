@@ -60,7 +60,7 @@ const Headerx = () => {
                   <li className="InputHeader">
                     <Inputheader />
                   </li>
-                  <li>Giới thiệu thông tin </li>
+                  <li>Giỏ hàng </li>
                   <li>Sản phẩm đã xem</li>
                   <li>Tra cứu đơn hàng</li>
                   <li onClick={handleLogin}>Đăng nhập</li>

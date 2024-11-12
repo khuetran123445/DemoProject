@@ -9,13 +9,19 @@ import OrderNow from "../BodyContent/OrderNow";
 import BuyToTal from "../Buy/BuyTotal";
 import MasterLayOut from "../BodyContent/MasterLayOut";
 import ShoppingCart from "../Buy/ShoppingCart";
+import Cart from "../Buy/Cart";
+import { AppProvider } from "../Context/Context";
 
 const queryClient = new QueryClient();
 const renderUserRourter = () => {
   const userRouter = [
     {
       path: ROUTERS.Link.HOME,
-      Component: <HomePage />,
+      Component: (
+        <QueryClientProvider client={queryClient}>
+          <HomePage />
+        </QueryClientProvider>
+      ),
     },
     {
       path: ROUTERS.LinkOrderPage.OrderPage,
@@ -49,15 +55,25 @@ const renderUserRourter = () => {
         </QueryClientProvider>
       ),
     },
+    {
+      path: ROUTERS.LinkComplet.Complete,
+      Component: (
+        <QueryClientProvider client={queryClient}>
+          <Cart />
+        </QueryClientProvider>
+      ),
+    },
   ];
   return (
-    <MasterLayOut>
-      <Routes>
-        {userRouter.map((item, key: number) => (
-          <Route key={key} path={item.path} element={item.Component} />
-        ))}
-      </Routes>
-    </MasterLayOut>
+    <AppProvider>
+      <MasterLayOut>
+        <Routes>
+          {userRouter.map((item, key: number) => (
+            <Route key={key} path={item.path} element={item.Component} />
+          ))}
+        </Routes>
+      </MasterLayOut>
+    </AppProvider>
   );
 };
 

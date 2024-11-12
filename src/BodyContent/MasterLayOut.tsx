@@ -4,11 +4,15 @@ import Footerx from "../theme/footer";
 
 const MasterLayout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div>
-      <Header />
+    <>
+      <div className="py-2">
+        <Header />
+      </div>
       {children}
-      <Footerx />
-    </div>
+      <div className="py-2">
+        <Footerx />
+      </div>
+    </>
   );
 };
 

@@ -1,6 +1,6 @@
 const Image = ({ image }: { image: string }) => {
   return (
-    <div className="ml-[50px] p-2">
+    <div className="pl-[10px] p-1">
       <img src={image} alt="" />
     </div>
   );

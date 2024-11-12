@@ -20,7 +20,7 @@ const HomePage = () => {
             maxWidth: "calc(100% - 20px)",
           }}
         >
-          <div className="flex gap-5 ">
+          <div className="flex  ">
             <div>
               <CateloryItem />
             </div>

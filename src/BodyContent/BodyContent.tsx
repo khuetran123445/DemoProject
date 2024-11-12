@@ -64,7 +64,7 @@ const BodyContent = () => {
             image={
               "https://ecshopvietnam.com/bkin/cdn/images/202103/goods_img/samsung-galaxy-s21-5g-P4305-1615367860159.jpg"
             }
-            title={"iPhone 16 Plus max 128GB Chính Hãng VN/A"}
+            title={"iPhone 16 Pro Max 256GB Chính Hãng VN/A"}
             price={889000}
             discount={1530000}
           />
@@ -74,7 +74,7 @@ const BodyContent = () => {
             image={
               "https://ecshopvietnam.com/bkin/cdn/images/202103/goods_img/samsung-galaxy-s21-5g-P4305-1615367860159.jpg"
             }
-            title={"iPhone 15 Pro Max 256GB VN/A - Tặng BH rơi vỡ vào nước"}
+            title={"iPhone 16 Pro Max 256GB Chính Hãng VN/A"}
             price={300000}
             discount={390000}
           />
@@ -84,7 +84,7 @@ const BodyContent = () => {
             image={
               "https://ecshopvietnam.com/bkin/cdn/images/202103/goods_img/samsung-galaxy-s21-5g-P4305-1615367860159.jpg"
             }
-            title={"Xiaomi 14T Pro 12GB 512GB Chính Hãng - Bảo hành 18 tháng"}
+            title={"iPhone 16 Pro Max 256GB Chính Hãng VN/A"}
             price={550000}
             discount={690000}
           />
@@ -94,7 +94,7 @@ const BodyContent = () => {
             image={
               "https://ecshopvietnam.com/bkin/cdn/images/202103/goods_img/samsung-galaxy-s21-5g-P4305-1615367860159.jpg"
             }
-            title={"iPhone 15 128GB VN/A - Tặng BH rơi vỡ vào nước"}
+            title={"iPhone 16 Pro Max 256GB Chính Hãng VN/A"}
             price={20690000}
             discount={29990000}
           />
