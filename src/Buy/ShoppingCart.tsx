@@ -2,11 +2,13 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import type { RadioChangeEvent } from "antd";
 import { Radio, Space } from "antd";
-import { useParams } from "react-router-dom";
+
 import { Formatter } from "../BodyContent/Currency";
+import { useNavigate, useParams } from "react-router-dom";
+import { AppContext } from "../Context/Context";
 
 type User = yup.InferType<typeof schema>;
 type TProduct = {
@@ -15,6 +17,7 @@ type TProduct = {
   title: string;
   price: number;
 };
+
 const schema = yup
   .object({
     firstName: yup.string().required("Vui lòng nhập tên"),
@@ -33,21 +36,18 @@ const schema = yup
 const ShoppingCart = () => {
   const [value, setValue] = useState(1);
   const [values, setvalues] = useState(1);
-
   const [transport, settransport] = useState(30);
   const [product, setProduct] = useState<TProduct | null>(null);
-  const { id } = useParams();
 
+  const { formdata } = useContext(AppContext);
+  const { id } = useParams();
+  const navigate = useNavigate();
   const onChange = (e: RadioChangeEvent) => {
     console.log("radio checked", e.target.value);
     setValue(e.target.value);
   };
 
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm<User>({
+  const { handleSubmit } = useForm<User>({
     resolver: yupResolver(schema),
   });
 
@@ -81,9 +81,17 @@ const ShoppingCart = () => {
 
   const onSubmit = (data: User) => {
     console.log("Form Data:", data);
-    // handle form submission here
   };
 
+  const gen = (): string => {
+    const times = Date.now().toString(36);
+    const radom = Math.random().toString(36).substring(2, 6);
+    return `kh-${times}-${radom}`;
+  };
+  const handleSubmitForm = () => {
+    const Order = gen();
+    navigate(`/Complete/${Order}`);
+  };
   return (
     <div className="flex gap-3">
       <div>
@@ -108,23 +116,14 @@ const ShoppingCart = () => {
             </Space>
           </Radio.Group>
           <p>infomation</p>
-
           <p>Tên:</p>
-          <input {...register("firstName")} />
-          <p style={{ color: "red" }}>{errors.firstName?.message}</p>
-
+          <div>{formdata?.firstName}</div>
           <p>Email:</p>
-          <input {...register("email")} />
-          <p style={{ color: "red" }}>{errors.email?.message}</p>
 
           <p>Số điện thoại:</p>
-          <input {...register("number")} />
-          <p style={{ color: "red" }}>{errors.number?.message}</p>
 
           <p>Địa chỉ:</p>
-          <input {...register("address")} />
-          <p style={{ color: "red" }}>{errors.address?.message}</p>
-
+          <div>{formdata?.address}</div>
           <div>
             <h3>Danh sách sản phẩm</h3>
             <p>Số lượng: {values}</p>
@@ -155,8 +154,9 @@ const ShoppingCart = () => {
               </p>
             </div>
           </div>
-
-          <input type="submit" value="HOÀN TẤT ĐẶT HÀNG" />
+          <button type="submit" onClick={handleSubmitForm}>
+            HOÀN TẤT ĐẶT HÀNG
+          </button>
         </form>
       </div>
     </div>
