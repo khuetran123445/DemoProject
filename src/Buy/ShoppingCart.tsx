@@ -8,7 +8,7 @@ import { Radio, Space } from "antd";
 
 import { Formatter } from "../BodyContent/Currency";
 import { useNavigate, useParams } from "react-router-dom";
-import { AppContext } from "../Context/Context";
+import { AppContext, PayContext } from "../Context/Context";
 
 type User = yup.InferType<typeof schema>;
 type TProduct = {
@@ -38,7 +38,7 @@ const ShoppingCart = () => {
   const [values, setvalues] = useState(1);
   const [transport, settransport] = useState(30);
   const [product, setProduct] = useState<TProduct | null>(null);
-
+  const { setPay } = useContext(PayContext);
   const { formdata } = useContext(AppContext);
   const { id } = useParams();
   const navigate = useNavigate();
@@ -75,6 +75,13 @@ const ShoppingCart = () => {
 
   const totalPay = product ? product.price * values + transport : 0;
 
+  useEffect(() => {
+    console.log("Total Pay updated:", totalPay); // Kiểm tra giá trị totalPay trong console log
+    if (totalPay !== 0) {
+      setPay({ totalPay });
+      // Cập nhật lại context với totalPay
+    }
+  }, [totalPay, setPay]);
   if (!product) {
     return <div>No product selected</div>;
   }

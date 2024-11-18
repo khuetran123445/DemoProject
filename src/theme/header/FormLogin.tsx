@@ -16,6 +16,7 @@ const FormLogin = () => {
   return (
     <div>
       <Form
+        className="Login"
         name="basic"
         labelCol={{ span: 8 }}
         wrapperCol={{ span: 16 }}

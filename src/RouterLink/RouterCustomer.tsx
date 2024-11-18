@@ -10,7 +10,7 @@ import BuyToTal from "../Buy/BuyTotal";
 import MasterLayOut from "../BodyContent/MasterLayOut";
 import ShoppingCart from "../Buy/ShoppingCart";
 import Cart from "../Buy/Cart";
-import { AppProvider } from "../Context/Context";
+import { AppProvider, PayProvider } from "../Context/Context";
 
 const queryClient = new QueryClient();
 const renderUserRourter = () => {
@@ -66,13 +66,15 @@ const renderUserRourter = () => {
   ];
   return (
     <AppProvider>
-      <MasterLayOut>
-        <Routes>
-          {userRouter.map((item, key: number) => (
-            <Route key={key} path={item.path} element={item.Component} />
-          ))}
-        </Routes>
-      </MasterLayOut>
+      <PayProvider>
+        <MasterLayOut>
+          <Routes>
+            {userRouter.map((item, key: number) => (
+              <Route key={key} path={item.path} element={item.Component} />
+            ))}
+          </Routes>
+        </MasterLayOut>
+      </PayProvider>
     </AppProvider>
   );
 };
